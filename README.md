@@ -79,7 +79,8 @@ An AI-based agriculture project focused on helping farmers make better decisions
 - 🔹 Solving problems using Python and Java
 - 🔹 Improving problem-solving skills for technical interviews
 
-[![LeetCode Profile](https://img.shields.io/badge/LeetCode-View%20Profile-orange?style=for-the-badge&logo=leetcode)](https://leetcode.com/u/IswWYKpcly/)
+
+
 ## 🔧 Tools & Technologies
 
 ```text
