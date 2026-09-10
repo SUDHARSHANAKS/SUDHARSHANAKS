@@ -1,1 +1,38 @@
+name: Update LeetCode Activity
 
+on:
+  schedule:
+    - cron: "30 18 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-leetcode:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Update LeetCode activity
+        run: |
+          python scripts/leetcode_activity.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets/leetcode-activity.svg
+
+          git diff --cached --quiet || git commit -m "Update LeetCode activity"
+
+          git push
